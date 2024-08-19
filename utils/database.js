@@ -11,12 +11,22 @@ export const connectedToDB = async () => {
     }
     try {
         await mongoose.connect(process.env.MONGODB_URI, {
-            dbName: 'prompts',
-            useNewUrlParser: true,
-            useUnifiedTopology: true,   
+            dbName: 'prompts'
         })
 
         isConnected = true
+        // const mongoURI = process.env.MONGODB_URI;
+        // if (!mongoURI) {
+        //     throw new Error('MONGODB_URI is not defined');
+        // }
+
+        // await mongoose.connect(mongoURI, {
+        //     dbName: 'prompts',
+        //     // Removed deprecated options
+        // });
+
+        // isConnected = true;
+        console.log('MongoDB Connected');
         
     } catch (error) {
         console.log(error);
