@@ -11,12 +11,12 @@ const CreatePrompt = () => {
     const router = useRouter()
     const { data: session } = useSession();
 
-    const [ submitting, setSubmitting ] = useState(false)
-    const [ post, setPost ] = useState({ 
+    const [submitting, setSubmitting] = useState(false)
+    const [post, setPost] = useState({
         prompt: '',
         tag: ''
     })
-    
+
     const createPrompt = async (e) => {
         e.preventDefault();
         setSubmitting(true);
@@ -41,15 +41,15 @@ const CreatePrompt = () => {
         }
     }
 
-  return (
-    <Form 
-        type="Create"
-        post={post}
-        setPost={setPost}
-        submitting={submitting}
-        handleSubmit={createPrompt}
-    />
-  )
+    return (
+        <Form
+            type="Create"
+            post={post}
+            setPost={setPost}
+            submitting={submitting}
+            handleSubmit={createPrompt}
+        />
+    )
 }
 
 export default CreatePrompt

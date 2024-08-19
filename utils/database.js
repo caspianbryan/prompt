@@ -15,9 +15,9 @@ export const connectedToDB = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,   
         })
-        isConnected = true
 
-        console.log('Monogo Connected')
+        isConnected = true
+        
     } catch (error) {
         console.log(error);
         throw error

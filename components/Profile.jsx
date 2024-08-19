@@ -2,7 +2,7 @@
 import PromtpCard from "./PromtpCard"
 
 const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
-  
+
   return (
     <section className="w-full">
       <h1 className="head_text text-left">
@@ -14,15 +14,15 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
         {desc}
       </p>
       <div className='mt-10 prompt_layout'>
-      {data.map((post) => (
-        <PromtpCard 
-          key={post._id}
-          post={post}
-          handleEdit={()=> handleEdit && handleEdit(post)}
-          handleDelete={() => handleDelete && handleDelete(post)}
-        />
-      ))}
-    </div>
+        {data.map((post) => (
+          <PromtpCard
+            key={post._id}
+            post={post}
+            handleEdit={() => handleEdit && handleEdit(post)}
+            handleDelete={() => handleDelete && handleDelete(post)}
+          />
+        ))}
+      </div>
     </section>
   )
 }
